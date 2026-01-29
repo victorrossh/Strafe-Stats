@@ -75,8 +75,9 @@ public SettingsMenu(id)
 
 public SettingsMenu_Handler(id, menu, item){
 	if(item == MENU_EXIT){
+		if(is_user_connected(id))
+			StatsMenu(id);
 		menu_destroy(menu);
-		StatsMenu(id);
 		return PLUGIN_HANDLED;
 	}
 

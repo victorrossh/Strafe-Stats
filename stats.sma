@@ -48,6 +48,8 @@ public plugin_natives(){
 
 	register_native("get_bool_pre", "native_get_bool_pre");
 	register_native("toggle_pre", "native_toggle_pre");
+
+	register_native("open_stats_menu", "native_open_stats_menu");
 }
 
 public native_get_user_sync(NumParams){
@@ -82,6 +84,11 @@ public native_display_stats(NumParams){
 			ShowSyncHudMsg(i, g_iMainHudSync, "Strafes: %i^nSync: %i%%", strafes, sync);
 		}
 	}
+}
+
+public native_open_stats_menu(NumParams){
+	new id = get_param(1);
+	StatsMenu(id);
 }
 
 public native_get_bool_stats(NumParams){
